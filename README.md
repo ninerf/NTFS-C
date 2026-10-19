@@ -22,8 +22,28 @@ ntfs watch            # make drives writable as soon as they're plugged in
 ntfs doctor           # check setup
 ```
 
-Drive won't mount? Windows probably used Fast Startup. Shut Windows down fully
-(hold Shift while clicking Shut Down), or run `ntfs mount -f`.
+Part 1: in Recovery
+
+Save your work and shut down the Mac (Apple menu → Shut Down).
+Press and hold the power button (Touch ID button) until you see “Loading startup options”, then let go.
+Click Options, then Continue. Sign in with your Mac password if asked.
+In the menu bar at the top, click Utilities → Startup Security Utility.
+Select your disk (usually “Macintosh HD”) and click Security Policy…
+Choose Reduced Security and tick “Allow user management of kernel extensions from identified developers”. Click OK and enter your password.
+Apple menu → Restart.
+
+Part 2: back in macOS
+
+Plug in your NTFS drive.
+Open Terminal and run ntfs mount.
+A “System Extension Blocked” message will pop up. Open System Settings → Privacy & Security, scroll down, and click Allow next to the macFUSE message (“Benjamin Fleischer”).
+Restart once more.
+
+Part 3: use it
+
+Plug in the drive and run ntfs mount.
+Run ntfs to check that the drive shows read-write. You can now copy to it in Finder.
+Before unplugging, eject it in Finder or run ntfs unmount <name>.
 
 ## Uninstall
 
