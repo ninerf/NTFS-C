@@ -1,7 +1,7 @@
 # NTFS-C
 
 Read **and write** Windows (NTFS) drives on any Apple Silicon Mac.
-One tiny C program, no app, no subscription.
+a very lightweight C program.
 
 ## Install
 
